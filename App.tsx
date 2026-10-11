@@ -6,7 +6,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import { initDatabase } from "./database/db";
 import { ListaScreen } from "./screens/ListaScreen";
-//import { FormularioScreen } from './src/screens/FormularioScreen';
+import { FormularioScreen } from "./screens/FormularioScreen";
 
 export type RootStackParamList = {
   Lista: undefined;
