@@ -1,5 +1,5 @@
 import React from "react";
-import { ActivityIndicator, View, Text } from "react-native";
+import { ActivityIndicator, View, Text, StyleSheet } from "react-native";
 import { SQLiteProvider } from "expo-sqlite";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -32,23 +32,36 @@ export default function App() {
     >
       <React.Suspense
         fallback={
-          <View>
-            <ActivityIndicator size="large" />
-            <Text>Cargando...</Text>
+          <View style={styles.loadingContainer}>
+            <ActivityIndicator size="large" color="#E11D48" />
+            <Text style={styles.loadingText}>Preparando la cocina...</Text>
           </View>
         }
       >
         <NavigationContainer>
-          <Stack.Navigator>
+          <Stack.Navigator
+            screenOptions={{
+              headerStyle: { backgroundColor: "#BE123C" }, // Carmesí intenso
+              headerTintColor: "#FFFFFF",
+              headerTitleAlign: "center",
+              headerTitleStyle: {
+                fontWeight: "800",
+                fontSize: 18,
+              },
+              headerShadowVisible: false,
+            }}
+          >
             <Stack.Screen
               name="Lista"
               component={ListaScreen}
-              options={{ title: "Cazador de Sabores" }}
+              options={{ title: "CAZADOR DE SABORES" }}
             />
             <Stack.Screen
               name="Formulario"
               component={FormularioScreen}
-              options={{ title: "Formulario" }}
+              options={({ route }) => ({
+                title: route.params?.id ? "EDITAR RESEÑA" : "NUEVA RESEÑA",
+              })}
             />
           </Stack.Navigator>
         </NavigationContainer>
@@ -56,3 +69,19 @@ export default function App() {
     </SQLiteProvider>
   );
 }
+
+const styles = StyleSheet.create({
+  loadingContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#FFF1F2", // Fondo rosado muy suave
+    gap: 16,
+  },
+  loadingText: {
+    fontSize: 16,
+    fontWeight: "800",
+    color: "#BE123C",
+    letterSpacing: 0.5,
+  },
+});
