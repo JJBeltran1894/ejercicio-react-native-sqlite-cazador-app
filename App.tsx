@@ -41,7 +41,7 @@ export default function App() {
         <NavigationContainer>
           <Stack.Navigator
             screenOptions={{
-              headerStyle: { backgroundColor: "#BE123C" }, // Carmesí intenso
+              headerStyle: { backgroundColor: "#BE123C" },
               headerTintColor: "#FFFFFF",
               headerTitleAlign: "center",
               headerTitleStyle: {
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#FFF1F2", // Fondo rosado muy suave
+    backgroundColor: "#FFF1F2",
     gap: 16,
   },
   loadingText: {

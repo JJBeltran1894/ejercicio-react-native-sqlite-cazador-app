@@ -20,7 +20,7 @@ export function FormularioScreen({ route, navigation }: any) {
 
   const idEdicion = route.params?.id;
   const tituloEdicion = route.params?.tituloActual || "";
-  const califEdicion = route.params?.calificacionActual || 5; // Cambiado a number para las estrellas
+  const califEdicion = route.params?.calificacionActual || 5;
   const comenEdicion = route.params?.comentariosActuales || "";
   const fotoEdicion = route.params?.fotoActual || null;
 
@@ -112,7 +112,6 @@ export function FormularioScreen({ route, navigation }: any) {
             {idEdicion ? "Detalles de la Reseña" : "¿Qué probaste hoy?"}
           </Text>
 
-          {/* Input Título */}
           <View style={styles.inputGroup}>
             <Text style={styles.label}>Platillo y Lugar</Text>
             <TextInput
@@ -124,7 +123,6 @@ export function FormularioScreen({ route, navigation }: any) {
             />
           </View>
 
-          {/* Calificación Interactiva (UX Mejorada) */}
           <View style={styles.inputGroup}>
             <Text style={styles.label}>Calificación del sabor</Text>
             <View style={styles.starsContainer}>
@@ -144,7 +142,6 @@ export function FormularioScreen({ route, navigation }: any) {
             </View>
           </View>
 
-          {/* Input Comentarios */}
           <View style={styles.inputGroup}>
             <Text style={styles.label}>Tus Comentarios</Text>
             <TextInput
@@ -157,7 +154,6 @@ export function FormularioScreen({ route, navigation }: any) {
             />
           </View>
 
-          {/* Botón de Cámara Styled */}
           <TouchableOpacity
             style={styles.btnCamara}
             activeOpacity={0.8}
@@ -169,7 +165,6 @@ export function FormularioScreen({ route, navigation }: any) {
             </Text>
           </TouchableOpacity>
 
-          {/* Previsualización Premium */}
           {fotoBase64 && (
             <View style={styles.previewBox}>
               <Image
