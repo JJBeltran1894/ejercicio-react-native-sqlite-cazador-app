@@ -109,7 +109,7 @@ export function FormularioScreen({ route, navigation }: any) {
       >
         <View style={styles.card}>
           <Text style={styles.headerText}>
-            {idEdicion ? "Detalles de la Reseña" : "¿Qué probaste hoy?"}
+            {idEdicion ? "Editando Reseña" : "Nueva Reseña"}
           </Text>
 
           <View style={styles.inputGroup}>

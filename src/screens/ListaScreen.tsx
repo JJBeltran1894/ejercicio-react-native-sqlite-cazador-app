@@ -87,7 +87,8 @@ export function ListaScreen({ navigation }: any) {
                 color="#F59E0B"
               />
             ))}
-            <Text style={styles.fecha}>{item.fecha}</Text>
+
+            <Text style={styles.fecha}>Registrado el {item.fecha}</Text>
           </View>
 
           <Text style={styles.comentarios} numberOfLines={2}>

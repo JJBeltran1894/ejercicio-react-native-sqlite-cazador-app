@@ -4,9 +4,9 @@ import { SQLiteProvider } from "expo-sqlite";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import { initDatabase } from "./database/db";
-import { ListaScreen } from "./screens/ListaScreen";
-import { FormularioScreen } from "./screens/FormularioScreen";
+import { initDatabase } from "./src/database/db";
+import { ListaScreen } from "./src//screens/ListaScreen";
+import { FormularioScreen } from "./src/screens/FormularioScreen";
 
 export type RootStackParamList = {
   Lista: undefined;
